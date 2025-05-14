@@ -3,79 +3,140 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Happy Birthday</title>
+  <title>choaaaaa em</title>
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
     body {
-      background: #0a0a0a;
-      color: white;
+      margin: 0;
+      background: #0d0d0d;
       font-family: 'Segoe UI', sans-serif;
+      color: #fff;
       overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
       text-align: center;
+      height: 100vh;
+    }
+    .heart-container {
+  margin: 20px auto;
+  width: 100px;
+  height: 90px;
+  position: relative;
+  animation: heartbeat 1s infinite;
+}
+
+.heart-shape {
+  width: 100px;
+  height: 90px;
+  background: #ff4da6;
+  position: absolute;
+  transform: rotate(-45deg);
+  top: 0;
+  left: 0;
+}
+
+.heart-shape::before,
+.heart-shape::after {
+  content: "";
+  position: absolute;
+  width: 100px;
+  height: 90px;
+  background: #ff4da6;
+  border-radius: 50%;
+}
+
+.heart-shape::before {
+  top: -50px;
+  left: 0;
+}
+
+.heart-shape::after {
+  left: 50px;
+  top: 0;
+}
+
+@keyframes heartbeat {
+  0% { transform: scale(1); }
+  25% { transform: scale(1.1); }
+  50% { transform: scale(1); }
+  75% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+    h1 {
+      font-size: 3.5rem;
+      margin: 0.5em 0;
+      color: #ff4da6;
+      animation: neon 1s infinite alternate;
     }
 
     .message {
-      font-size: 1.5em;
-      margin-top: 30px;
-      color: #00ff99;
-      font-weight: bold;
+      font-size: 1.5rem;
+      color: #ffcccc;
+      margin-bottom: 30px;
     }
 
-    .cake {
-  margin: 20px auto;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-}
-
-
-    h1 {
-      font-size: 3em;
-    }
-
-    .age {
-      font-size: 4em;
-      font-weight: bold;
-      color: #096ff5;
-      text-shadow: 0 0 10px #0ff, 0 0 20px #0ff;
-      animation: blink 1s infinite alternate;
-    }
-
-    @keyframes blink {
+    @keyframes neon {
       0% {
-        opacity: 1;
-        text-shadow: 0 0 10px #0ff, 0 0 20px #0ff;
+        text-shadow: 0 0 5px #ff4da6, 0 0 10px #ff4da6, 0 0 20px #ff4da6;
       }
       100% {
-        opacity: 0.5;
-        text-shadow: 0 0 5px #0ff;
+        text-shadow: 0 0 10px #ff99cc, 0 0 20px #ff99cc, 0 0 30px #ff99cc;
       }
     }
 
-    .birthday {
-      font-size: 2em;
-      font-weight: bold;
-      margin-bottom: 20px;
-    }
+    .heart {
+  position: relative;
+  width: 100px;
+  height: 90px;
+  background-color: #ff4d88;
+  transform: rotate(-45deg);
+  margin: 20px auto;
+  animation: heartbeat 1s infinite;
+}
 
-    canvas {
-      position: fixed;
-      top: 0;
-      left: 0;
-      z-index: -1;
+.heart::before,
+.heart::after {
+  content: "";
+  position: absolute;
+  width: 100px;
+  height: 90px;
+  background-color: #ff4d88;
+  border-radius: 50%;
+}
+
+.heart::before {
+  top: -50px;
+  left: 0;
+}
+
+.heart::after {
+  left: 50px;
+  top: 0;
+}
+
+@keyframes heartbeat {
+  0%, 100% {
+    transform: rotate(-45deg) scale(1);
+  }
+  50% {
+    transform: rotate(-45deg) scale(1.1);
+  }
+}
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+      100% { transform: scale(1); }
     }
 
     .balloon {
       position: absolute;
       width: 30px;
       height: 50px;
-      border: 3px solid;
+      border: 2px solid;
       border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+      animation: floatBalloon 6s ease-in-out infinite;
     }
 
     .balloon::after {
@@ -89,77 +150,90 @@
       transform: translateX(-50%);
     }
 
+    @keyframes floatBalloon {
+      0% { transform: translateY(0) rotate(0deg); }
+      50% { transform: translateY(-40px) rotate(2deg); }
+      100% { transform: translateY(0) rotate(-2deg); }
+    }
+
+    canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: -1;
+    }
+
     @media (max-width: 600px) {
-      .message { font-size: 1.2em; }
-      h1 { font-size: 2em; }
-      .age { font-size: 2.5em; }
-      .birthday { font-size: 1.5em; }
+      h1 { font-size: 2.2rem; }
+      .message { font-size: 1.1rem; }
+      .heart { transform: scale(0.8); }
     }
   </style>
 </head>
 <body>
+    <h1>hngoc</h1>
+  <h1></h1>
+  <div class="heart"></div>
 
-  <div class="message">Yêu hngoccc !</div>
-
-  <div class="cake">
-    <svg viewBox="0 0 100 100" width="150" height="150">
-      <!-- Bánh -->
-      <rect x="20" y="50" width="60" height="30" rx="5" ry="5" fill="#33cc66" stroke="#00ff66" stroke-width="3"/>
-      <!-- Sóng kem -->
-      <path d="M22 50 
-               Q25 45, 30 50 
-               Q35 55, 40 50 
-               Q45 45, 50 50 
-               Q55 55, 60 50 
-               Q65 45, 70 50 
-               Q75 55, 78 50" 
-            fill="none" stroke="#00ff66" stroke-width="2"/>
-  
-      <!-- Nến -->
-      <line x1="28" y1="50" x2="28" y2="35" stroke="#00ff66" stroke-width="2"/>
-      <line x1="38" y1="50" x2="38" y2="35" stroke="#00ff66" stroke-width="2"/>
-      <line x1="48" y1="50" x2="48" y2="35" stroke="#00ff66" stroke-width="2"/>
-      <line x1="58" y1="50" x2="58" y2="35" stroke="#00ff66" stroke-width="2"/>
-      <line x1="68" y1="50" x2="68" y2="35" stroke="#00ff66" stroke-width="2"/>
-  
-      <!-- Ngọn lửa -->
-      <path d="M28 34 Q28 31, 30 32 Q28 30, 26 32 Q28 31, 28 34" fill="orange"/>
-      <path d="M38 34 Q38 31, 40 32 Q38 30, 36 32 Q38 31, 38 34" fill="orange"/>
-      <path d="M48 34 Q48 31, 50 32 Q48 30, 46 32 Q48 31, 48 34" fill="orange"/>
-      <path d="M58 34 Q58 31, 60 32 Q58 30, 56 32 Q58 31, 58 34" fill="orange"/>
-      <path d="M68 34 Q68 31, 70 32 Q68 30, 66 32 Q68 31, 68 34" fill="orange"/>
-    </svg>
   </div>
-  
+  <div class="message">anh yêu bé 💞</div>
 
-  <h1>Happy</h1>
-  <div class="age">20th</div>
-  <div class="birthday">Birthday!</div>
-
-  <!-- Canvas Fireworks -->
-  <canvas id="fireworks"></canvas>
-
-  <!-- Balloons container -->
-  <div id="balloons-container"></div>
-
+  <!-- Balloons -->
   <script>
-    // FIREWORKS
+    const colors = ["#ff66cc", "#ff9999", "#ff4da6", "#ff80bf", "#ffb3d9"];
+    for (let i = 0; i < 20; i++) {
+      const b = document.createElement("div");
+      b.className = "balloon";
+      b.style.left = Math.random() * 100 + "vw";
+      b.style.top = 80 + Math.random() * 20 + "vh";
+      b.style.borderColor = colors[Math.floor(Math.random() * colors.length)];
+      b.style.animationDelay = Math.random() * 5 + "s";
+      document.body.appendChild(b);
+    }
+  </script>
+
+  <!-- Fireworks -->
+  <canvas id="fireworks"></canvas>
+  <script>
     const canvas = document.getElementById("fireworks");
     const ctx = canvas.getContext("2d");
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
 
-    const fireworks = [];
+    class Particle {
+      constructor(x, y, color) {
+        this.x = x;
+        this.y = y;
+        this.radius = 2;
+        this.speed = Math.random() * 4 + 1;
+        this.angle = Math.random() * 2 * Math.PI;
+        this.color = color;
+        this.life = 80;
+      }
+
+      update() {
+        this.x += Math.cos(this.angle) * this.speed;
+        this.y += Math.sin(this.angle) * this.speed;
+        this.life--;
+      }
+
+      draw() {
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.radius, 0, 2 * Math.PI);
+        ctx.fillStyle = this.color;
+        ctx.fill();
+      }
+    }
 
     class Firework {
       constructor() {
         this.x = Math.random() * canvas.width;
         this.y = canvas.height;
         this.targetY = Math.random() * canvas.height / 2;
-        this.speed = 4 + Math.random() * 3;
         this.color = `hsl(${Math.random() * 360}, 100%, 70%)`;
         this.exploded = false;
         this.particles = [];
+        this.speed = 4;
       }
 
       update() {
@@ -173,7 +247,8 @@
 
       explode() {
         this.exploded = true;
-        for (let i = 0; i < 30; i++) {
+        const count = 40;
+        for (let i = 0; i < count; i++) {
           this.particles.push(new Particle(this.x, this.y, this.color));
         }
       }
@@ -181,7 +256,7 @@
       draw() {
         if (!this.exploded) {
           ctx.beginPath();
-          ctx.arc(this.x, this.y, 2, 0, 2 * Math.PI);
+          ctx.arc(this.x, this.y, 3, 0, 2 * Math.PI);
           ctx.fillStyle = this.color;
           ctx.fill();
         } else {
@@ -190,96 +265,34 @@
       }
     }
 
-    class Particle {
-      constructor(x, y, color) {
-        this.x = x;
-        this.y = y;
-        this.angle = Math.random() * 2 * Math.PI;
-        this.speed = Math.random() * 4;
-        this.color = color;
-        this.life = 60;
-      }
+    const fireworks = [];
 
-      update() {
-        this.x += Math.cos(this.angle) * this.speed;
-        this.y += Math.sin(this.angle) * this.speed;
-        this.life--;
-      }
-
-      draw() {
-        if (this.life > 0) {
-          ctx.beginPath();
-          ctx.arc(this.x, this.y, 2, 0, 2 * Math.PI);
-          ctx.fillStyle = this.color;
-          ctx.fill();
-        }
-      }
-    }
-
-    function animateFireworks() {
-      ctx.fillStyle = "rgba(0,0,0,0.2)";
+    function animate() {
+      ctx.fillStyle = "rgba(0, 0, 0, 0.2)";
       ctx.fillRect(0, 0, canvas.width, canvas.height);
 
       if (Math.random() < 0.05) {
         fireworks.push(new Firework());
       }
 
-      fireworks.forEach((fw, index) => {
+      fireworks.forEach((fw, i) => {
         fw.update();
         fw.draw();
         if (fw.exploded && fw.particles.every(p => p.life <= 0)) {
-          fireworks.splice(index, 1);
+          fireworks.splice(i, 1);
         }
       });
 
-      requestAnimationFrame(animateFireworks);
+      requestAnimationFrame(animate);
     }
 
-    animateFireworks();
+    animate();
 
-    // BALLOONS
-    const balloonColors = ['#00ffff', '#00ff00', '#ffff00', '#ff3399', '#ff6600', '#ff00ff'];
-    const container = document.getElementById('balloons-container');
-
-    function createBalloon() {
-      const balloon = document.createElement('div');
-      balloon.className = 'balloon';
-      const color = balloonColors[Math.floor(Math.random() * balloonColors.length)];
-      balloon.style.borderColor = color;
-      balloon.style.color = color;
-
-      const size = 20 + Math.random() * 20;
-      balloon.style.width = `${size}px`;
-      balloon.style.height = `${size * 1.5}px`;
-      balloon.style.left = `${Math.random() * 100}%`;
-      balloon.style.bottom = '-60px';
-      balloon.style.animation = `rise ${5 + Math.random() * 5}s linear forwards`;
-
-      container.appendChild(balloon);
-
-      // Remove after animation
-      setTimeout(() => {
-        container.removeChild(balloon);
-      }, 10000);
-    }
-
-    setInterval(createBalloon, 400); // Balloon every 400ms
-
-    // Balloon animation
-    const style = document.createElement('style');
-    style.innerHTML = `
-      @keyframes rise {
-        0% { transform: translateY(0); opacity: 1; }
-        100% { transform: translateY(-110vh); opacity: 0.2; }
-      }
-    `;
-    document.head.appendChild(style);
-
-    // Responsive resize
-    window.addEventListener('resize', () => {
+    window.addEventListener("resize", () => {
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
     });
   </script>
 </body>
 </html>
+
